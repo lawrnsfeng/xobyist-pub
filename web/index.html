@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#2b1d14">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="xobyist">
+    <title>xobyist</title>
+
+    
+<script type="module">
+import init, * as bindings from '/web-e2618f6d704f6fdc.js';
+
+const wasm = await init({ module_or_path: '/web-67ddd698b741b6c9_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+    <base href="/" />
+
+    <!-- After `<base>`: relative hrefs above it would resolve against the domain root. -->
+    
+    <link rel="icon" href="/logo-da6a51c4166a1b28.svg" integrity="sha384-lWBueyp6woouu8z4KizGQR7GivPA9BICmJgAPan7vY/wFuFLjr/dGqxEnXjDUCwF"/>
+
+    <style>
+        html { touch-action: manipulation; }
+        body { background: #2b1d14; }
+        html, body {
+            overflow: hidden; margin: 0 !important; padding: 0 !important; height: 100%; width: 100%;
+            overscroll-behavior: none;
+        }
+        canvas {
+            margin: 0 auto; display: block; position: absolute;
+            top: env(safe-area-inset-top);
+            left: env(safe-area-inset-left);
+            width: calc(100% - env(safe-area-inset-left) - env(safe-area-inset-right));
+            height: calc(100% - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+            touch-action: none;
+        }
+        .centered {
+            margin: 0 auto; display: block; position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%); color: #f3e6cf; font-size: 20px;
+            font-family: Helvetica, sans-serif; text-align: center;
+        }
+    </style>
+<link rel="modulepreload" href="/web-e2618f6d704f6fdc.js" crossorigin="anonymous" integrity="sha384-jaNNfZtBwYk0wbbUVml8Z7RfZ5adQmAMhctod3HTnu6TDJkbkN6vYF1gLd2VJc5x"><link rel="preload" href="/web-67ddd698b741b6c9_bg.wasm" crossorigin="anonymous" integrity="sha384-Jeip5mocy56Kd/fogmdB/uyzXKjTEPoYRCzq3wqSIcb0ckS3kBPWTdFjxjqr7w46" as="fetch" type="application/wasm"></head>
+<body>
+    <canvas id="xobyist_canvas"></canvas>
+    <div class="centered" id="loading_text">
+        <noscript>You need JavaScript to use this app.</noscript>
+        <p>Loading…</p>
+    </div>
+</body>
+</html>
